@@ -1,2 +1,2 @@
-# SNES-Clone---Starfox
+# SNES Clone - Starfox
  
