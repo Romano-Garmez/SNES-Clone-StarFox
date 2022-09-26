@@ -176,7 +176,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c9bf60fdbff43432ca28621d339744aa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -393,7 +393,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 5.8, y: 1.65, z: 0}
+  m_LocalPosition: {x: 509.74, y: 6.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -428,11 +428,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1bdb822c3507f4f598dfa079c6c3715b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 503.94
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1bdb822c3507f4f598dfa079c6c3715b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 4.73
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1bdb822c3507f4f598dfa079c6c3715b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -494,8 +494,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e41a6d6e89e6f4900adc0a39b5bb785c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  rotationSpeed: 10
-  rotationSpeedLR: 10
+  speed: 50
+  rotationSpeed: 50
+  rotationSpeedLR: 50
   verticalInput: 10
   horizontalInput: 10
