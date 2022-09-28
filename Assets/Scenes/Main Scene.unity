@@ -1826,7 +1826,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1293553288}
   m_Layer: 0
-  m_Name: GameWorld (1)
+  m_Name: GameWorld 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3355,9 +3355,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
-  rotationSpeed: 50
-  rotationSpeedLR: 50
-  xReset: 1000
+  rotationSpeedUpDown: 50
+  rotationSpeedLeftRight: 50
+  worldPosReset: 1000
+  maxHeight: 100
+  maxDistanceLeftRight: 100
   invertedVerticalControl: 0
 --- !u!4 &8521871724871117654
 Transform:
