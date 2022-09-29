@@ -22,9 +22,9 @@ public class PlaneController : MonoBehaviour
 
     void Start()
     {
-        originalRotationX = GetComponent<Transform>().position.x;
-        originalRotationY = GetComponent<Transform>().position.y;
-        originalRotationZ = GetComponent<Transform>().position.z;
+        originalRotationX = transform.position.x;
+        originalRotationY = transform.position.y;
+        originalRotationZ = transform.position.z;
         endRot = new Quaternion(originalRotationX, originalRotationY, originalRotationZ, 1);
     }
 
@@ -32,31 +32,31 @@ public class PlaneController : MonoBehaviour
     void FixedUpdate()
     {
         //reset at end of world (looks like world goes on forever)
-        if (GetComponent<Transform>().position.x > worldPosReset)
+        if (transform.position.x > worldPosReset)
         {
             transform.position =
                 new Vector3(0, transform.position.y, transform.position.z);
         }
 
         //prevent from going to far left/right
-        if (GetComponent<Transform>().position.z > maxDistanceLeftRight)
+        if (transform.position.z > maxDistanceLeftRight)
         {
             transform.position =
                 new Vector3(transform.position.x, transform.position.y, maxDistanceLeftRight);
         }
-        if (GetComponent<Transform>().position.z < (-1 * maxDistanceLeftRight))
+        if (transform.position.z < (-1 * maxDistanceLeftRight))
         {
             transform.position =
                 new Vector3(transform.position.x, transform.position.y, -maxDistanceLeftRight);
         }
 
         //prevent from going to high or too low
-        if (GetComponent<Transform>().position.y > maxHeight)
+        if (transform.position.y > maxHeight)
         {
             transform.position =
                 new Vector3(transform.position.x, maxHeight, transform.position.z);
         }
-        if (GetComponent<Transform>().position.y < 0)
+        if (transform.position.y < 0)
         {
             transform.position =
                 new Vector3(transform.position.x, 0, transform.position.z);
@@ -65,7 +65,7 @@ public class PlaneController : MonoBehaviour
         if (!Input.anyKey)
         {
             //TODO: if no input, smoothly rotate to original rotation
-            Quaternion startRot = GetComponent<Transform>().rotation;
+            Quaternion startRot = transform.rotation;
             if (transform.rotation != endRot)
             {
                 Debug.Log("not same");
