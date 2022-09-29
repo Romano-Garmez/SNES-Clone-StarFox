@@ -38,30 +38,12 @@ public class PlaneController : MonoBehaviour
                 new Vector3(0, transform.position.y, transform.position.z);
         }
 
-        //prevent from going to far left/right
-        if (transform.position.z > maxDistanceLeftRight)
-        {
-            transform.position =
-                new Vector3(transform.position.x, transform.position.y, maxDistanceLeftRight);
-        }
-        if (transform.position.z < (-1 * maxDistanceLeftRight))
-        {
-            transform.position =
-                new Vector3(transform.position.x, transform.position.y, -maxDistanceLeftRight);
-        }
 
-        //prevent from going to high or too low
-        if (transform.position.y > maxHeight)
-        {
-            transform.position =
-                new Vector3(transform.position.x, maxHeight, transform.position.z);
-        }
-        if (transform.position.y < 0)
-        {
-            transform.position =
-                new Vector3(transform.position.x, 0, transform.position.z);
-        }
-
+        //Clamping is done here
+        var tp = transform.position;
+        transform.position = new Vector3(transform.position.x, Mathf.Clamp(tp.y, -maxHeight, maxHeight),
+            Mathf.Clamp(tp.z, -maxDistanceLeftRight, maxDistanceLeftRight));
+        
         if (!Input.anyKey)
         {
             //TODO: if no input, smoothly rotate to original rotation
