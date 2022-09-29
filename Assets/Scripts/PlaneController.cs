@@ -5,16 +5,15 @@ using UnityEngine;
 public class PlaneController : MonoBehaviour
 {
     public float speed = 10;
-    public float rotationSpeed = 50;
+    public float controlRotationSpeed = 50;
+    public float rotationBackSpeed = 50;
     public int worldPosReset = 1000;
 
     public int maxHeight = 100;
     public int maxDistanceLeftRight = 100;
     public bool invertedVerticalControl = false;
 
-    private float originalRotationX;
-    private float originalRotationY;
-    private float originalRotationZ;
+    private Vector3 originalRotation;
 
     private Quaternion endRot;
 
@@ -22,10 +21,9 @@ public class PlaneController : MonoBehaviour
 
     void Start()
     {
-        originalRotationX = transform.position.x;
-        originalRotationY = transform.position.y;
-        originalRotationZ = transform.position.z;
-        endRot = new Quaternion(originalRotationX, originalRotationY, originalRotationZ, 1);
+        originalRotation = transform.position;
+        originalRotation.y = 180;
+        endRot = Quaternion.Euler(originalRotation);
     }
 
     // Update is called once per frame
@@ -41,7 +39,7 @@ public class PlaneController : MonoBehaviour
 
         //Clamping is done here
         var tp = transform.position;
-        transform.position = new Vector3(transform.position.x, Mathf.Clamp(tp.y, -maxHeight, maxHeight),
+        transform.position = new Vector3(transform.position.x, Mathf.Clamp(tp.y, 0, maxHeight),
             Mathf.Clamp(tp.z, -maxDistanceLeftRight, maxDistanceLeftRight));
         
         if (!Input.anyKey)
@@ -51,9 +49,12 @@ public class PlaneController : MonoBehaviour
             if (transform.rotation != endRot)
             {
                 Debug.Log("not same");
-                transform.rotation = Quaternion.Slerp(startRot, endRot, Time.time * rotationSpeed);
+                //transform.eulerAngles = Vector3.Slerp(startRot.eulerAngles, endRot.eulerAngles, Time.deltaTime * rotationBackSpeed);
+                transform.rotation = Quaternion.Slerp(startRot, endRot, Time.deltaTime * rotationBackSpeed);
             }
         }
+        
+        
 
         // get the user's vertical/horizontal input
         float verticalInput;
@@ -71,18 +72,28 @@ public class PlaneController : MonoBehaviour
         transform.Translate(Vector3.left * speed * Time.deltaTime);
 
         // tilt the plane up/down based on up/down arrow keys
-        transform
-            .Rotate(Vector3.forward *
-            rotationSpeed *
-            Time.deltaTime *
-            verticalInput *
-            -1);
+        //transform
+        //    .Rotate(Vector3.forward *
+        //    controlRotationSpeed *
+        //    Time.deltaTime *
+        //    -verticalInput);
+        
+        transform.Rotate(new Vector3(0, 0, verticalInput * Time.deltaTime * controlRotationSpeed), Space.World);
 
         // tilt the plane left/right based on left/right arrow keys
         transform
             .Rotate(Vector3.up *
-            rotationSpeed *
+            controlRotationSpeed *
             Time.deltaTime *
-            horizontalInput);
+            horizontalInput, Space.World);
+        
+        //We do a little bit of rotation clamping, its called we do a little rotation clamping
+
+        Vector3 tRot = transform.localEulerAngles;
+        float cXVal = Mathf.Clamp(tRot.x, -45, 45);
+        float cYVal = Mathf.Clamp(tRot.y, 135, 225);
+        float cZVal = Mathf.Clamp(tRot.z, -45, 45);
+        //transform.eulerAngles = new Vector3(cXVal, cYVal, cZVal);
+        transform.rotation = Quaternion.Euler(new Vector3(cXVal, cYVal, cZVal));
     }
 }
