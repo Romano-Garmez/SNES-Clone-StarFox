@@ -9,6 +9,9 @@ public class EnemyController : MonoBehaviour
     private int yOffset;
     private int zOffset;
 
+    public int maxHeight = 100;
+    public int maxDistanceLeftRight = 100;
+
     public Transform targetObject;
 
     void Start()
@@ -32,6 +35,9 @@ public class EnemyController : MonoBehaviour
 
         // move the plane forward at a constant rate (model is rotated right, so moving left cancels out)
         transform.Translate(Vector3.left * speed * Time.deltaTime);
+
+        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, 0, maxHeight),
+            Mathf.Clamp(transform.position.z, -maxDistanceLeftRight, maxDistanceLeftRight));
     }
 
     void ChangeOffset()
