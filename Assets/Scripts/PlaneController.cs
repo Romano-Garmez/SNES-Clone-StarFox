@@ -14,13 +14,11 @@ public class PlaneController : MonoBehaviour
     public bool invertedVerticalControl = false;
 
     private Vector3 originalRotation;
-
     private Quaternion endRot;
-
-
 
     void Start()
     {
+        //save some important starting info
         originalRotation = transform.position;
         originalRotation.y = 180;
         endRot = Quaternion.Euler(originalRotation);
@@ -36,20 +34,17 @@ public class PlaneController : MonoBehaviour
                 new Vector3(0, transform.position.y, transform.position.z);
         }
 
-
         //Clamping is done here
         var tp = transform.position;
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(tp.y, 0, maxHeight),
             Mathf.Clamp(tp.z, -maxDistanceLeftRight, maxDistanceLeftRight));
 
+        //When no keys are pressed, move back to facing directly to end of stage
         if (!Input.anyKey)
         {
-            //TODO: if no input, smoothly rotate to original rotation
             Quaternion startRot = transform.rotation;
             if (transform.rotation != endRot)
             {
-                Debug.Log("not same");
-                //transform.eulerAngles = Vector3.Slerp(startRot.eulerAngles, endRot.eulerAngles, Time.deltaTime * rotationBackSpeed);
                 transform.rotation = Quaternion.Slerp(startRot, endRot, Time.deltaTime * rotationBackSpeed);
             }
         }
@@ -66,7 +61,7 @@ public class PlaneController : MonoBehaviour
             verticalInput = (Input.GetAxis("Vertical"));
         }
 
-        // move the plane forward at a constant rate (model is rotated right, so moving left cancels out)
+        // move the plane forward at a constant rate (moving on x axis)
         transform.Translate(Vector3.left * speed * Time.deltaTime);
 
         transform.Rotate(new Vector3(0, 0, verticalInput * Time.deltaTime * controlRotationSpeed), Space.World);
