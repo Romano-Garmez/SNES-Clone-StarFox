@@ -6,7 +6,7 @@ public class PlaneController : MonoBehaviour
 {
     public float speed = 10;
     public float controlRotationSpeed = 50;
-    public float rotationBackSpeed = 50;
+    public float rotationBackSpeed = 5;
     public int worldPosReset = 1000;
 
     public int maxHeight = 100;
@@ -41,7 +41,7 @@ public class PlaneController : MonoBehaviour
         var tp = transform.position;
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(tp.y, 0, maxHeight),
             Mathf.Clamp(tp.z, -maxDistanceLeftRight, maxDistanceLeftRight));
-        
+
         if (!Input.anyKey)
         {
             //TODO: if no input, smoothly rotate to original rotation
@@ -53,8 +53,6 @@ public class PlaneController : MonoBehaviour
                 transform.rotation = Quaternion.Slerp(startRot, endRot, Time.deltaTime * rotationBackSpeed);
             }
         }
-        
-        
 
         // get the user's vertical/horizontal input
         float verticalInput;
@@ -71,29 +69,24 @@ public class PlaneController : MonoBehaviour
         // move the plane forward at a constant rate (model is rotated right, so moving left cancels out)
         transform.Translate(Vector3.left * speed * Time.deltaTime);
 
-        // tilt the plane up/down based on up/down arrow keys
-        //transform
-        //    .Rotate(Vector3.forward *
-        //    controlRotationSpeed *
-        //    Time.deltaTime *
-        //    -verticalInput);
-        
         transform.Rotate(new Vector3(0, 0, verticalInput * Time.deltaTime * controlRotationSpeed), Space.World);
 
         // tilt the plane left/right based on left/right arrow keys
         transform
-            .Rotate(Vector3.up *
+            .Rotate((Vector3.up *
             controlRotationSpeed *
             Time.deltaTime *
-            horizontalInput, Space.World);
-        
+            horizontalInput), Space.World);
+
         //We do a little bit of rotation clamping, its called we do a little rotation clamping
 
         Vector3 tRot = transform.localEulerAngles;
         float cXVal = Mathf.Clamp(tRot.x, -45, 45);
         float cYVal = Mathf.Clamp(tRot.y, 135, 225);
-        float cZVal = Mathf.Clamp(tRot.z, -45, 45);
+        //TODO: zClamping is broken
+        //float cZVal = Mathf.Clamp(tRot.z, -45, 45);
+
         //transform.eulerAngles = new Vector3(cXVal, cYVal, cZVal);
-        transform.rotation = Quaternion.Euler(new Vector3(cXVal, cYVal, cZVal));
+        transform.rotation = Quaternion.Euler(new Vector3(cXVal, cYVal, tRot.z));
     }
 }
