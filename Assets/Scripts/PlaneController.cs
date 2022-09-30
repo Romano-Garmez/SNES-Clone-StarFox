@@ -76,12 +76,12 @@ public class PlaneController : MonoBehaviour
         //We do a little bit of rotation clamping, its called we do a little rotation clamping
 
         Vector3 tRot = transform.localEulerAngles;
-        float cXVal = Mathf.Clamp(tRot.x, -45, 45);
+        //float cXVal = Mathf.Clamp(tRot.x, -45, 45);
         float cYVal = Mathf.Clamp(tRot.y, 135, 225);
-        //TODO: zClamping is broken
+        //TODO: zClamping is broken, xClamping is funny and can probably just be locked to 0 degrees always?
         //float cZVal = Mathf.Clamp(tRot.z, -45, 45);
 
         //transform.eulerAngles = new Vector3(cXVal, cYVal, cZVal);
-        transform.rotation = Quaternion.Euler(new Vector3(cXVal, cYVal, tRot.z));
+        transform.rotation = Quaternion.Euler(new Vector3(0, cYVal, tRot.z));
     }
 }
