@@ -778,8 +778,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5121799f4375748b4bb27affe2df2ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
-  worldPosReset: 1000
+  speed: 250
+  worldPosReset: 2000
   maxHeight: 100
   maxDistanceLeftRight: 100
   targetObject: {fileID: 0}

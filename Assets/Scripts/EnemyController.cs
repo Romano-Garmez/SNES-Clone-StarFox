@@ -16,7 +16,7 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("ChangeOffset", 2.0f, 3.0f);
+        InvokeRepeating("ChangeOffset", 2.0f, Random.Range(0, 15));
 
     }
 

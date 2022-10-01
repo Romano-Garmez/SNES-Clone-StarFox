@@ -6,7 +6,7 @@ public class PlaneController : MonoBehaviour
 {
     public float speed = 10;
     public float controlRotationSpeed = 50;
-    public float rotationBackSpeed = 5;
+    public float rotationBackSpeed = 10;
     public int worldPosReset = 1000;
 
     public int maxHeight = 100;
@@ -76,12 +76,27 @@ public class PlaneController : MonoBehaviour
         //We do a little bit of rotation clamping, its called we do a little rotation clamping
 
         Vector3 tRot = transform.localEulerAngles;
+        //xClamping is funny and can probably just be locked to 0 degrees always?
         //float cXVal = Mathf.Clamp(tRot.x, -45, 45);
         float cYVal = Mathf.Clamp(tRot.y, 135, 225);
-        //TODO: zClamping is broken, xClamping is funny and can probably just be locked to 0 degrees always?
+
+        //Clamping only selects having a range the numbers can be in, rather than a range they can't be in, so we need to do this manually as far as I can tell
         //float cZVal = Mathf.Clamp(tRot.z, -45, 45);
+        float cZVal = tRot.z;
+        //if facing down, set 45
+        if (tRot.z > 45 && tRot.z < 180)
+        {
+            cZVal = 45;
+        }
+        //if facing up, set -45
+        else if (tRot.z > 180 && tRot.z < 315)
+        {
+            cZVal = -45;
+        }
+        //TODO: imma write my own method to do this properly when I get a chance. You can do it if you get a chance before I do
+
 
         //transform.eulerAngles = new Vector3(cXVal, cYVal, cZVal);
-        transform.rotation = Quaternion.Euler(new Vector3(0, cYVal, tRot.z));
+        transform.rotation = Quaternion.Euler(new Vector3(0, cYVal, cZVal));
     }
 }
