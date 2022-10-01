@@ -1003,7 +1003,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802979341}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.80214024, y: -3.2848105, z: -0.87820864}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1030,6 +1030,7 @@ GameObject:
   - component: {fileID: 1928872458}
   - component: {fileID: 1928872460}
   - component: {fileID: 1928872459}
+  - component: {fileID: 1928872461}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -1045,12 +1046,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1928872457}
   m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -25, y: 3, z: 0}
+  m_LocalPosition: {x: -42.9, y: 50, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1946478408}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!81 &1928872459
 AudioListener:
@@ -1103,6 +1104,21 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1928872461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928872457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1a841d2958ca224c90e9b055b2e6d6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 1946478408}
+  offset: {x: -40, y: 25, z: 0}
+  divisionFactor: 2
 --- !u!1 &1946478406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1138,10 +1154,10 @@ MonoBehaviour:
   pitchAmount: 20
   forwardVector: {x: 25, y: 0, z: 0}
   shipForwardSpeed: 5
-  zMoveSpeed: 1
-  yMoveSpeed: 1
-  zClamp: 50
-  yClamp: 50
+  zMoveSpeed: 55
+  yMoveSpeed: 55
+  zClamp: 100
+  yClamp: 60
   lerpSpeed: 5
 --- !u!4 &1946478408
 Transform:
@@ -1151,12 +1167,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1946478406}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.80214024, y: 3.2848105, z: 0.87820864}
+  m_LocalPosition: {x: 0, y: 50, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1802979342}
-  - {fileID: 1928872458}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

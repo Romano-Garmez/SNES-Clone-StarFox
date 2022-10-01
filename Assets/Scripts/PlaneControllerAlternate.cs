@@ -1,8 +1,6 @@
- using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+ using UnityEngine;
 
-public class PlaneControllerAlternate : MonoBehaviour
+ public class PlaneControllerAlternate : MonoBehaviour
 {
     [Header("Ship")]
     public Transform shipPivot;
@@ -35,8 +33,9 @@ public class PlaneControllerAlternate : MonoBehaviour
         var forwardMovement = (forwardVector * (Time.deltaTime * shipForwardSpeed));
         
         //Increase position by [forward movement]                [ Player input for y ]  [ Player movement for z ]   
-        transform.position += forwardMovement + new Vector3(0, yInput * yMoveSpeed, zInput * -zMoveSpeed);
-
+        //transform.position += forwardMovement + new Vector3(0, yInput * yMoveSpeed, zInput * -zMoveSpeed) * Time.deltaTime;
+        transform.Translate(forwardMovement + new Vector3(0, yInput * yMoveSpeed, zInput * -zMoveSpeed) * Time.deltaTime);
+        
         //Quick cache here
         var tPos = transform.position;
         
