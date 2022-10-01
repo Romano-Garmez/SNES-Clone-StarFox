@@ -30,11 +30,11 @@
         float yInput = Input.GetAxis("Vertical");
 
         //This is the Vector3 for consistent forward movement
-        var forwardMovement = (forwardVector * (Time.deltaTime * shipForwardSpeed));
+        var forwardMovement = (forwardVector * shipForwardSpeed);
         
         //Increase position by [forward movement]                [ Player input for y ]  [ Player movement for z ]   
         //transform.position += forwardMovement + new Vector3(0, yInput * yMoveSpeed, zInput * -zMoveSpeed) * Time.deltaTime;
-        transform.Translate(forwardMovement + new Vector3(0, yInput * yMoveSpeed, zInput * -zMoveSpeed) * Time.deltaTime);
+        transform.Translate((forwardMovement + new Vector3(0, yInput * yMoveSpeed, zInput * -zMoveSpeed)) * Time.deltaTime);
         
         //Quick cache here
         var tPos = transform.position;
