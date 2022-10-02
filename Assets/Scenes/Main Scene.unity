@@ -264,11 +264,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6802f66c5aba5fb4da5e2267e50d6ed8, type: 3}
---- !u!1 &61687621 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6001254512623730985, guid: 5d9ffe9e734554fbc85fe45ef9a051cd, type: 3}
-  m_PrefabInstance: {fileID: 6001254512397332809}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &77956258
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,18 +942,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6001254512623730989, guid: 5d9ffe9e734554fbc85fe45ef9a051cd, type: 3}
   m_PrefabInstance: {fileID: 6001254512397332809}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1031991400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 61687621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 668154a35f3d06e4481a9b0c18c5eecd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1064859944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,7 +1443,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1946478408}
   - component: {fileID: 1946478407}
-  - component: {fileID: 1946478409}
   m_Layer: 0
   m_Name: AlternatePlaneController
   m_TagString: Untagged
@@ -1509,18 +1491,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1946478409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1946478406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 668154a35f3d06e4481a9b0c18c5eecd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1950377575
 GameObject:
   m_ObjectHideFlags: 0
