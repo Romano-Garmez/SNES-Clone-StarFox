@@ -1,11 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class WorldController : MonoBehaviour
+public class BuildingObstacle : MonoBehaviour
 {
+    public float wrapAroundDistance = -2000f;
     public Vector3 moveDirection = new Vector3(5, 0, 0);
     public float moveSpeed = -25;
 
-    public float wrapAroundDistance = -1000f;
+    public int randomMinZ = -50;
+    public int randomMaxZ = 50;
+
 
     // Update is called once per frame
     void Update()
@@ -13,7 +18,7 @@ public class WorldController : MonoBehaviour
         transform.Translate(moveDirection * (Time.deltaTime * moveSpeed));
         if (transform.position.x < wrapAroundDistance)
         {
-            transform.position = new Vector3(0, transform.position.y, transform.position.z);
+            transform.position = new Vector3(2000, transform.position.y, Random.Range(randomMinZ, randomMaxZ));
         }
     }
 }
