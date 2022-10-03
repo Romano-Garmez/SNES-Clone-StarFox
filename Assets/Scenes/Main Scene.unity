@@ -1930,7 +1930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   other: {fileID: 1946478408}
   offset: {x: -40, y: 25, z: 0}
-  divisionFactor: 2
+  divisionFactor: 1.5
 --- !u!1 &1946478406
 GameObject:
   m_ObjectHideFlags: 0
