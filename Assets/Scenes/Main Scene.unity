@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.045178972, g: 0.12960857, b: 0.1619364, a: 1}
+  m_IndirectSpecularColor: {r: 0.04533755, g: 0.12961474, b: 0.16231138, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 3702744}
   - component: {fileID: 3702746}
   - component: {fileID: 3702745}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ID51
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -274,7 +274,8 @@ GameObject:
   m_Component:
   - component: {fileID: 77956259}
   - component: {fileID: 77956260}
-  m_Layer: 0
+  - component: {fileID: 77956261}
+  m_Layer: 3
   m_Name: ShipCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,6 +311,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2349169402155886349, guid: a60c24a9bad4d374f8f1f68b70d3742a, type: 3}
+--- !u!114 &77956261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77956258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6533d97136ffc754eb266082bb85acea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  curHealth: 0
+  damageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  deathEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &517250880
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +342,7 @@ GameObject:
   - component: {fileID: 517250881}
   - component: {fileID: 517250883}
   - component: {fileID: 517250882}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ID77
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +426,7 @@ GameObject:
   - component: {fileID: 518024561}
   - component: {fileID: 518024563}
   - component: {fileID: 518024562}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ID33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -588,7 +609,7 @@ GameObject:
   - component: {fileID: 711020474}
   - component: {fileID: 711020476}
   - component: {fileID: 711020475}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ID17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -670,7 +691,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 802372349}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RightFiringPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -703,7 +724,7 @@ GameObject:
   - component: {fileID: 976018960}
   - component: {fileID: 976018962}
   - component: {fileID: 976018961}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ID41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -785,7 +806,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1029911357}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -816,7 +837,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1064859945}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LeftFiringPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -849,7 +870,7 @@ GameObject:
   - component: {fileID: 1099553186}
   - component: {fileID: 1099553188}
   - component: {fileID: 1099553187}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ID95
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1081,7 +1102,7 @@ GameObject:
   - component: {fileID: 1776571286}
   - component: {fileID: 1776571288}
   - component: {fileID: 1776571287}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ID25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1164,7 +1185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1802979342}
   - component: {fileID: 1802979343}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FlyingShipMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1308,7 +1329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1946478408}
   - component: {fileID: 1946478407}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AlternatePlaneController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1367,7 +1388,7 @@ GameObject:
   - component: {fileID: 1950377576}
   - component: {fileID: 1950377578}
   - component: {fileID: 1950377577}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ID59
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1451,7 +1472,7 @@ GameObject:
   - component: {fileID: 1986076765}
   - component: {fileID: 1986076767}
   - component: {fileID: 1986076766}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1545,7 +1566,7 @@ GameObject:
   - component: {fileID: 2022802340}
   - component: {fileID: 2022802342}
   - component: {fileID: 2022802341}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ID87
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1628,7 +1649,7 @@ GameObject:
   - component: {fileID: 2064383095}
   - component: {fileID: 2064383097}
   - component: {fileID: 2064383096}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ID69
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1710,7 +1731,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2100508247}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10838,6 +10859,8 @@ GameObject:
   - component: {fileID: 6001254512202359169}
   - component: {fileID: 6001254512202359168}
   - component: {fileID: 2114319318}
+  - component: {fileID: 6001254512202359176}
+  - component: {fileID: 6001254512202359175}
   m_Layer: 0
   m_Name: EnemyShipAlternate
   m_TagString: Untagged
@@ -10863,6 +10886,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &6001254512202359175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6001254512202359170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6533d97136ffc754eb266082bb85acea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  curHealth: 0
+  damageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  deathEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6001254512202359170}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!135 &6001254512202359176
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6001254512202359170}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5.2050114
+  m_Center: {x: -0.699172, y: 0.95, z: -0.03442192}
 --- !u!1 &6001254512246539221
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,10 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public float damage = 1f;
     public float moveSpeed = 1f;
     
 
@@ -16,6 +14,16 @@ public class Projectile : MonoBehaviour
         if (transform.position.x < -50)
         {
             Destroy(this.gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        var go = collision.transform.gameObject;
+        Debug.Log(go.name);
+        if (go.TryGetComponent(out Health hp))
+        {
+            hp.Damage(damage);
         }
     }
 }
