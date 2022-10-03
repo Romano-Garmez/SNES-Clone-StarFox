@@ -8,8 +8,8 @@ public class BuildingObstacle : MonoBehaviour
     public Vector3 moveDirection = new Vector3(5, 0, 0);
     public float moveSpeed = -25;
 
-    public int randomMinZ = -50;
-    public int randomMaxZ = 50;
+    public int randomMinZ = -150;
+    public int randomMaxZ = 150;
 
 
     // Update is called once per frame
