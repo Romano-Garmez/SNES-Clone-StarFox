@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.04533755, g: 0.12961474, b: 0.16231138, a: 1}
+  m_IndirectSpecularColor: {r: 0.045178972, g: 0.12960857, b: 0.1619364, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -207,63 +207,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3702743}
   m_Mesh: {fileID: 2111738847322658775, guid: 33f10830f5c6f42c98116601caa1ebca, type: 3}
---- !u!1001 &28585032
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 814749931888103278, guid: 6802f66c5aba5fb4da5e2267e50d6ed8, type: 3}
-      propertyPath: m_Name
-      value: Projectile
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836155484568216257, guid: 6802f66c5aba5fb4da5e2267e50d6ed8, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836155484568216257, guid: 6802f66c5aba5fb4da5e2267e50d6ed8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 93.74044
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836155484568216257, guid: 6802f66c5aba5fb4da5e2267e50d6ed8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 43.22501
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836155484568216257, guid: 6802f66c5aba5fb4da5e2267e50d6ed8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.3610817
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836155484568216257, guid: 6802f66c5aba5fb4da5e2267e50d6ed8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836155484568216257, guid: 6802f66c5aba5fb4da5e2267e50d6ed8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836155484568216257, guid: 6802f66c5aba5fb4da5e2267e50d6ed8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.70710677
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836155484568216257, guid: 6802f66c5aba5fb4da5e2267e50d6ed8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836155484568216257, guid: 6802f66c5aba5fb4da5e2267e50d6ed8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836155484568216257, guid: 6802f66c5aba5fb4da5e2267e50d6ed8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 1836155484568216257, guid: 6802f66c5aba5fb4da5e2267e50d6ed8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6802f66c5aba5fb4da5e2267e50d6ed8, type: 3}
 --- !u!1 &77956258
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +220,7 @@ GameObject:
   - component: {fileID: 77956261}
   m_Layer: 3
   m_Name: ShipCollider - Player Health Here
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -692,7 +635,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &662156059 stripped
 Transform:
@@ -1196,7 +1139,7 @@ Transform:
   - {fileID: 1946478408}
   - {fileID: 90424480}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1099553185
 GameObject:
@@ -1507,8 +1450,9 @@ GameObject:
   - component: {fileID: 1435782026}
   - component: {fileID: 1435782025}
   - component: {fileID: 1435782024}
+  - component: {fileID: 1435782029}
   m_Layer: 0
-  m_Name: Building
+  m_Name: RandomBuilding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1531,6 +1475,7 @@ MonoBehaviour:
   moveSpeed: -25
   randomMinZ: -150
   randomMaxZ: 150
+  damage: 5
 --- !u!65 &1435782025
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1539,7 +1484,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1435782023}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -1607,8 +1552,24 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1435782029
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435782023}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1493675464
 GameObject:
   m_ObjectHideFlags: 0
@@ -11638,7 +11599,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6001254512202359174
 Transform:
   m_ObjectHideFlags: 0

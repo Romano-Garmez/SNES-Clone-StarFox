@@ -14,12 +14,12 @@ public class Health : MonoBehaviour
     [Tooltip("Only used to show or hide values!!!")]
     public bool isPlayer = false;
 
-    [ShowIf(nameof(isPlayer))] 
-    public Slider hpSlider; 
-        
+    [ShowIf(nameof(isPlayer))]
+    public Slider hpSlider;
+
     public UnityEvent damageEvent;
     public UnityEvent deathEvent;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,13 +34,14 @@ public class Health : MonoBehaviour
 
     public void Damage(float damageAmount)
     {
-        damageEvent?.Invoke();
 
         curHealth -= damageAmount;
 
+        damageEvent?.Invoke();
+
         if (curHealth < 0)
         {
-            Die();    
+            Die();
         }
     }
 
