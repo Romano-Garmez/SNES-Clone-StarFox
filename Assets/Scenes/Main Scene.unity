@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.045178972, g: 0.12960857, b: 0.1619364, a: 1}
+  m_IndirectSpecularColor: {r: 0.04533755, g: 0.12961474, b: 0.16231138, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -886,6 +886,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 802372349}
+  - component: {fileID: 802372350}
   m_Layer: 3
   m_Name: RightFiringPos
   m_TagString: Untagged
@@ -901,13 +902,29 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802372348}
   m_LocalRotation: {x: -0, y: -0.70710707, z: -0, w: 0.70710653}
-  m_LocalPosition: {x: -1.709375, y: -0.79999924, z: 2.43125}
+  m_LocalPosition: {x: -1.7093811, y: -0.80000305, z: 2.43125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1802979342}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &802372350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802372348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34320a02d137e5f4d986bf15b2090942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 4540821152484172329, guid: f63d0f64ad699f6469569e2c33556fbb, type: 3}
+  offsetRotation: {x: -90, y: 0, z: 0}
+  shootKey: 32
+  timeBetweenShots: 1
 --- !u!1 &976018959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,7 +1038,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1802979342}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1052033122
 GameObject:
@@ -1108,6 +1125,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1064859945}
+  - component: {fileID: 1064859946}
   m_Layer: 3
   m_Name: LeftFiringPos
   m_TagString: Untagged
@@ -1122,14 +1140,30 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1064859944}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.709375, y: -0.79999924, z: -2.43125}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -1.7093811, y: -0.80000305, z: -2.43125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1802979342}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &1064859946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064859944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34320a02d137e5f4d986bf15b2090942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 4540821152484172329, guid: f63d0f64ad699f6469569e2c33556fbb, type: 3}
+  offsetRotation: {x: -90, y: 0, z: 0}
+  shootKey: 32
+  timeBetweenShots: 1
 --- !u!1 &1067104760
 GameObject:
   m_ObjectHideFlags: 0
@@ -1573,7 +1607,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1493675464
 GameObject:
@@ -1775,9 +1809,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1986076765}
-  - {fileID: 1064859945}
-  - {fileID: 802372349}
   - {fileID: 1029911357}
+  - {fileID: 802372349}
+  - {fileID: 1064859945}
   m_Father: {fileID: 1946478408}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}

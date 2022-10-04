@@ -4,14 +4,16 @@ public class Projectile : MonoBehaviour
 {
     public float damage = 1f;
     public float moveSpeed = 1f;
-    
 
+    public float minX = -50;
+
+    public float maxX = 1000;
     // Update is called once per frame
     void Update()
     {
         transform.Translate(transform.forward * (moveSpeed * Time.deltaTime), Space.World);
 
-        if (transform.position.x < -50)
+        if (transform.position.x < minX || transform.position.x > maxX)
         {
             Destroy(this.gameObject);
         }
@@ -25,5 +27,7 @@ public class Projectile : MonoBehaviour
         {
             hp.Damage(damage);
         }
+        
+        Destroy(this.gameObject);
     }
 }
