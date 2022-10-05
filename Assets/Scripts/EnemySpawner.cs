@@ -47,7 +47,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void AddRandomEnemy()
     {
-        int value = Mathf.RoundToInt(Random.Range(0.0f, (float) enemyPrefabs.Count));
+        int value = Mathf.RoundToInt(Random.Range(0.0f, (float) enemyPrefabs.Count - 1));
         var go = Instantiate(enemyPrefabs[value]);
         var hp = go.GetComponentInChildren<Health>();
         activeEnemies.Add(hp);
