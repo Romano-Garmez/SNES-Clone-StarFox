@@ -19,6 +19,7 @@ public class Health : MonoBehaviour
 
     public UnityEvent damageEvent;
     public UnityEvent deathEvent;
+    public GameObject explosionPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -48,5 +49,7 @@ public class Health : MonoBehaviour
     private void Die()
     {
         deathEvent?.Invoke();
+          GameObject explosion = Instantiate(explosionPrefab, transform.position, transform.rotation * Quaternion.Euler (0f, 0f, 90f));
+          Destroy(explosion, 2.0f);
     }
 }
