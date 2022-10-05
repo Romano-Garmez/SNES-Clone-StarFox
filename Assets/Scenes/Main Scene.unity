@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.04533755, g: 0.12961474, b: 0.16231138, a: 1}
+  m_IndirectSpecularColor: {r: 0.045178972, g: 0.12960857, b: 0.1619364, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -301,6 +301,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   explosionPrefab: {fileID: 4707034877772340365, guid: edb9d4e31812e48f48f9155e627a6935, type: 3}
+  explosionRotationOffset: {x: 90, y: 0, z: 90}
 --- !u!1 &90424476
 GameObject:
   m_ObjectHideFlags: 0
@@ -11706,6 +11707,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   explosionPrefab: {fileID: 4707034877772340365, guid: edb9d4e31812e48f48f9155e627a6935, type: 3}
+  explosionRotationOffset: {x: 0, y: 0, z: 90}
 --- !u!135 &6001254512202359176
 SphereCollider:
   m_ObjectHideFlags: 0

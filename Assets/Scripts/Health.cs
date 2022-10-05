@@ -21,6 +21,8 @@ public class Health : MonoBehaviour
     public UnityEvent deathEvent;
     public GameObject explosionPrefab;
 
+    public Vector3 explosionRotationOffset;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,7 +51,8 @@ public class Health : MonoBehaviour
     private void Die()
     {
         deathEvent?.Invoke();
-          GameObject explosion = Instantiate(explosionPrefab, transform.position, transform.rotation * Quaternion.Euler (0f, 0f, 90f));
-          Destroy(explosion, 2.0f);
+        GameObject explosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
+        explosion.transform.eulerAngles = explosionRotationOffset;
+        Destroy(explosion, 2.0f);
     }
 }

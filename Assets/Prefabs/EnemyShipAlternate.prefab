@@ -914,6 +914,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  explosionPrefab: {fileID: 4707034877772340365, guid: edb9d4e31812e48f48f9155e627a6935, type: 3}
+  explosionRotationOffset: {x: 0, y: 0, z: 90}
 --- !u!1 &7299233105515175737
 GameObject:
   m_ObjectHideFlags: 0
