@@ -41,6 +41,7 @@ public class PlayerShootingController : MonoBehaviour
     void Shoot()
     {
         var go = Instantiate(projectilePrefab, transform.position, transform.rotation);
-        go.transform.forward = transform.forward + offsetRotation;
+        //go.transform.forward = transform.forward + offsetRotation;
+        go.transform.eulerAngles = transform.eulerAngles + offsetRotation;
     }
 }
