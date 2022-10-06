@@ -166,8 +166,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
+  shootPos: {fileID: 3892421763700294837}
   minTimeBetweenShots: 0.1
   maxTimeBetweenShots: 5
+  rotationOffset: {x: 0, y: 0, z: 0}
   projectilePrefab: {fileID: 814749931888103278, guid: 6802f66c5aba5fb4da5e2267e50d6ed8, type: 3}
   offsetRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &4132158005161797163
@@ -916,6 +918,15 @@ MonoBehaviour:
         m_CallState: 2
   explosionPrefab: {fileID: 4707034877772340365, guid: edb9d4e31812e48f48f9155e627a6935, type: 3}
   explosionRotationOffset: {x: 0, y: 0, z: 90}
+  damageFlashMaterial: {fileID: 2100000, guid: 0ee943618210fd44095a46156d636f0f, type: 2}
+  meshes:
+  - {fileID: 49810994257284955}
+  - {fileID: 7927912940489435105}
+  - {fileID: 1955100441785803862}
+  - {fileID: 221485318473034677}
+  - {fileID: 319730714771381543}
+  - {fileID: 8033821440428508233}
+  - {fileID: 7023309185088425592}
 --- !u!1 &7299233105515175737
 GameObject:
   m_ObjectHideFlags: 0

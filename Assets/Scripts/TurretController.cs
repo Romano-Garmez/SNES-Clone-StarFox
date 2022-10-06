@@ -5,10 +5,14 @@ public class TurretController : MonoBehaviour
 {
     public Transform playerTransform;
 
+    public Transform shootPos;
+
     public float minTimeBetweenShots = .1f;
     public float maxTimeBetweenShots = 5f;
 
     private float curRandTime = 0;
+
+    public Vector3 rotationOffset;
     
     [AssetsOnly] 
     public GameObject projectilePrefab;
@@ -19,6 +23,7 @@ public class TurretController : MonoBehaviour
     private void FixedUpdate()
     {
         transform.LookAt(playerTransform);
+        transform.eulerAngles += rotationOffset;
 
         timer += 0.0333333333333f;
 
@@ -34,7 +39,7 @@ public class TurretController : MonoBehaviour
     {
         curRandTime = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
 
-        var go = Instantiate(projectilePrefab, transform.position, transform.rotation);
+        var go = Instantiate(projectilePrefab, shootPos.position, transform.rotation);
         go.transform.forward = transform.forward + offsetRotation;
     }
 }
