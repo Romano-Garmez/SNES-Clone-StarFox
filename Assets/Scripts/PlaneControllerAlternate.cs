@@ -7,7 +7,12 @@
     public float rollAmount = 20f;
     public float yawAmount = 20f;
     public float pitchAmount = 20f;
-
+    
+    
+    public float barrelRollAmount = 90f;
+    public float rollClamp = 90f;
+    public float rollZFac = 1.2f;
+    
     [Header("Movement")] 
     public Vector3 forwardVector;
     public float shipForwardSpeed = 1f;
@@ -29,6 +34,15 @@
         float zInput = Input.GetAxis("Horizontal");
         float yInput = Input.GetAxis("Vertical");
 
+        var roll = Input.GetAxis("Roll");
+        float tiltValue = roll * barrelRollAmount;
+
+        if (roll >= .4f || roll <= -.4f)
+        {
+            zInput *= rollZFac;
+            yInput = 0;
+        }
+
         //This is the Vector3 for consistent forward movement
         var forwardMovement = (forwardVector * shipForwardSpeed);
         
@@ -49,9 +63,9 @@
         //If we just clamped the z value (we are at left or right border) set zFac accordingly
         var zBool = transform.position.z >= zClamp || transform.position.z <= -zClamp;
         LerpValue(ref zFac, !zBool);
-        
+
         //Actual ship rotation happens here     [The roll is done here]             [Yaw is done here]                 [Pitch is done here]
-        shipPivot.rotation = Quaternion.Euler(zInput * rollAmount * zFac,  180 + zInput * yawAmount * zFac, yInput * -pitchAmount * yFac);
+        shipPivot.rotation = Quaternion.Euler(Mathf.Clamp((zInput * rollAmount * zFac + tiltValue), -rollClamp, rollClamp),  180 + zInput * yawAmount * zFac, yInput * -pitchAmount * yFac);
     }
 
     /// <summary>
