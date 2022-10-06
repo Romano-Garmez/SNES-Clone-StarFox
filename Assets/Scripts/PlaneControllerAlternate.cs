@@ -12,6 +12,7 @@
     public float barrelRollAmount = 90f;
     public float rollClamp = 90f;
     public float rollZFac = 1.2f;
+    public float rolledPitchClamp = .4f;
     
     [Header("Movement")] 
     public Vector3 forwardVector;
@@ -40,7 +41,7 @@
         if (roll >= .4f || roll <= -.4f)
         {
             zInput *= rollZFac;
-            yInput = 0;
+            yInput = Mathf.Clamp(yInput, -rolledPitchClamp, rolledPitchClamp);
         }
 
         //This is the Vector3 for consistent forward movement
@@ -64,7 +65,7 @@
         var zBool = transform.position.z >= zClamp || transform.position.z <= -zClamp;
         LerpValue(ref zFac, !zBool);
 
-        //Actual ship rotation happens here     [The roll is done here]             [Yaw is done here]                 [Pitch is done here]
+        //Actual ship rotation happens here     [The roll is done here]                                                                    [Yaw is done here]                 [Pitch is done here]
         shipPivot.rotation = Quaternion.Euler(Mathf.Clamp((zInput * rollAmount * zFac + tiltValue), -rollClamp, rollClamp),  180 + zInput * yawAmount * zFac, yInput * -pitchAmount * yFac);
     }
 
