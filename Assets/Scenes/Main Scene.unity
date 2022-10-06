@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.04533755, g: 0.12961474, b: 0.16231138, a: 1}
+  m_IndirectSpecularColor: {r: 0.045178972, g: 0.12960857, b: 0.1619364, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -714,7 +714,7 @@ GameObject:
   - component: {fileID: 534735995}
   - component: {fileID: 534735996}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: Enemy Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
