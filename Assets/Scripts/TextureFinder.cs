@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class TextureFinder : MonoBehaviour
 {
+    #if UNITY_EDITOR
     [SerializeField, ReadOnly]
     private static List<Material> materials = new List<Material>();
 
@@ -35,4 +36,6 @@ public class TextureFinder : MonoBehaviour
             materials[i].mainTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(AssetDatabase.GUIDToAssetPath(texAddresses[i]));
         }
     }
+    
+    #endif
 }
