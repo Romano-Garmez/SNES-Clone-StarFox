@@ -13,6 +13,10 @@ public class BuildingObstacle : MonoBehaviour
 
     public float damage = 5f;
 
+    void Start()
+    {
+        transform.position = new Vector3(transform.position.x, transform.position.y, Random.Range(randomMinZ, randomMaxZ));
+    }
 
     // Update is called once per frame
     void Update()
