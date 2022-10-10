@@ -32,6 +32,18 @@ public class GameManager : MonoBehaviour
             RenderSettings.skybox = LevelThemes[index].skybox;
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Time.timeScale == 1)
+            {
+                Time.timeScale = 0;
+
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }
+        }
     }
 }
 
