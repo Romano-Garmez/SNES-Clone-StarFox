@@ -2738,7 +2738,7 @@ MonoBehaviour:
   zMoveSpeed: 55
   yMoveSpeed: 55
   zClamp: 100
-  yClamp: 60
+  yClamp: 100
   lerpSpeed: 5
 --- !u!4 &1946478408
 Transform:
