@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9dbc320b2e3d4b779af65b5ce956594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wrapAroundDistance: -2000
+  wrapAroundDistance: 2000
   moveDirection: {x: 5, y: 0, z: 0}
   moveSpeed: -25
   randomMinZ: -150
