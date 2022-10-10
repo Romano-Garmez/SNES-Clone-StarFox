@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
             RenderSettings.skybox = LevelThemes[index].skybox;
         }
 
+        //game pausing
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (Time.timeScale == 1)
@@ -43,6 +45,12 @@ public class GameManager : MonoBehaviour
             {
                 Time.timeScale = 1;
             }
+        }
+
+        //if r key, reload scene
+        if (Input.GetKeyDown("r"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
