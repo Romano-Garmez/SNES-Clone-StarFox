@@ -28,14 +28,18 @@ public class TurretController : MonoBehaviour
         transform.LookAt(playerTransform);
         transform.eulerAngles += rotationOffset;
 
-        //Increment the timer by fixedTime
-        timer += Time.fixedTime;
+
 
         //Do random shooting here
         if (timer >= curRandTime)
         {
             Shoot();
             timer = 0;
+        }
+        else
+        {
+            //Increment the timer by fixedTime
+            timer += .03333333333333f;
         }
     }
 

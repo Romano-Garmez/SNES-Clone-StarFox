@@ -32,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
         yield return new WaitForSeconds(timeBetweenSpawns);
         
         //If we dont have the max amount of players spawned
-        if (activeEnemies.Count <= maxConcurrentEnemies)
+        if (activeEnemies.Count < maxConcurrentEnemies)
         {
 
             AddRandomEnemy();
