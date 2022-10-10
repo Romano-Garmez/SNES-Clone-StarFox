@@ -44,6 +44,7 @@ public class EnemyControllerAlternate : MonoBehaviour
         
         yield return new WaitForSeconds(Random.Range(randomChanceMinTime, randomChanceMaxTime));
 
+        //Add random offset (scramble)
         if (chanceOfScramble >= Random.Range(0, 100) && currentScrambleBursts > 0)
         {
             randomOffset.y = Random.Range(-scrambleValues.y, scrambleValues.y);
@@ -52,6 +53,7 @@ public class EnemyControllerAlternate : MonoBehaviour
             currentScrambleBursts -= scrambleBurstCost;
         }
         else
+        //Otherwise dont have an offset
         {
             randomOffset = Vector3.zero;
         }
@@ -64,18 +66,23 @@ public class EnemyControllerAlternate : MonoBehaviour
     {
         var newPos = targetPosition.position + targetOffset + randomOffset;
 
+        //Clamp newPos to within the bounds of the screen
         newPos.y = Mathf.Clamp(newPos.y, 0, limits.y);
         newPos.z = Mathf.Clamp(newPos.z, -limits.x, limits.x);
         
+        //Lerp the transform position 
         transform.position = Vector3.Lerp(transform.position, newPos, maxMoveSpeed * Time.deltaTime);
 
-        
+        //If we have no scramble bursts
         if (currentScrambleBursts <= 0)
         {
+            //Increase the timer
             timer += Time.deltaTime;
 
+            //If we are above scramble recover time
             if (timer >= scrambleBurstRecoverTime)
             {
+                //Reset the bursts and the timer
                 currentScrambleBursts = scrambleBurstAmount;
                 timer = 0;
             }

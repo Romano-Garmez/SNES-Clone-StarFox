@@ -11,8 +11,10 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Move forward
         transform.Translate(transform.forward * (moveSpeed * Time.deltaTime), Space.World);
 
+        //if out of bounds, destroy the object
         if (transform.position.x < minX || transform.position.x > maxX)
         {
             Destroy(this.gameObject);
@@ -21,13 +23,14 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        var go = collision.transform.gameObject;
-        Debug.Log(go.name);
-        if (go.TryGetComponent(out Health hp))
+        //Get the hp
+        if (collision.transform.TryGetComponent(out Health hp))
         {
+            //Damage it
             hp.Damage(damage);
         }
         
+        //Destroy this
         Destroy(this.gameObject);
     }
 }

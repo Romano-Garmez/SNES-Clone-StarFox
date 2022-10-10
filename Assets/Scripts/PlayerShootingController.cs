@@ -13,12 +13,7 @@ public class PlayerShootingController : MonoBehaviour
     public float timeBetweenShots = 1f;
 
     private float curTime = 0f;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void Update()
@@ -41,7 +36,6 @@ public class PlayerShootingController : MonoBehaviour
     void Shoot()
     {
         var go = Instantiate(projectilePrefab, transform.position, transform.rotation);
-        //go.transform.forward = transform.forward + offsetRotation;
         go.transform.eulerAngles = transform.eulerAngles + offsetRotation;
     }
 }

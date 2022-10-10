@@ -44,59 +44,72 @@ public class Health : MonoBehaviour
         hpSlider.value = curHealth;
     }
 
-    public void InitializeDamageFlash()
+    private void InitializeDamageFlash()
     {
+        //For each assigned message
         meshes.ForEach(m =>
         {
+            //Make a new gameObject with the name, as well as set all of its positions
             var go = new GameObject($"DamageFlash{m.sharedMesh.name}");
             go.transform.parent = m.transform;
             go.transform.localPosition = Vector3.zero;
+            
+            //This is to prevent z fighting
             go.transform.localScale = new Vector3(1.01f, 1.01f, 1.01f);
             go.transform.localEulerAngles = Vector3.zero;
 
+            //Add a mesh renderer and a mesh filter
             var mr = go.AddComponent<MeshRenderer>();
+            var mf = go.AddComponent<MeshFilter>();
 
+            //Add the mesh enderer to the renderers list
             renderers.Add(mr);
 
-            var mf = go.AddComponent<MeshFilter>();
+            //Assign the mesh
             mf.mesh = m.mesh;
 
-
+            //Set all of the mesh render materials to be all damage flash materials
             mr.sharedMaterials = Enumerable.Repeat(damageFlashMaterial, m.GetComponent<MeshRenderer>().materials.Length).ToArray();
             
+            //Disable the flash
             mr.gameObject.SetActive(false);
         });
     }
 
+    
     public void Damage(float damageAmount)
     {
+        //Stop the coroutine first then run it to prevent goofiness
         StopCoroutine(DamageEffect());
         StartCoroutine(DamageEffect());
         
         curHealth -= damageAmount;
 
         damageEvent?.Invoke();
-
+        
         if (curHealth < 0)
         {
             Die();
         }
-        
-        
     }
 
     IEnumerator DamageEffect()
     {
+        //Enable all the renderers 
         renderers.ForEach(m => m.gameObject.SetActive(true));
 
+        //Wait a bit
         yield return new WaitForSeconds(.1f);
         
+        //Disable all the renderers
         renderers.ForEach(m => m.gameObject.SetActive(false));
     }
 
     private void Die()
     {
         deathEvent?.Invoke();
+        
+        //Instantiate the explosion prefab
         GameObject explosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
         explosion.transform.eulerAngles = explosionRotationOffset;
         Destroy(explosion, 2.0f);
